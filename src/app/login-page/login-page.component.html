@@ -1,0 +1,40 @@
+<!--<div style="text-align:center">
+    <img width="100" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  </div>-->
+  <div class="container border border-white p-5 InlineForm">
+      <div id="login-row" class="row justify-content-center align-items-center">
+          <div id="login-column" class="col-md-6">
+              <div id="login-box" class="col-md-12">
+                  <form (ngSubmit)="loginForm.form.valid && validateLogin(loginModel)" #loginForm="ngForm" novalidate>
+                      <h3 class="text-center text-info">WorkFlow Login Page</h3>
+                      <div class="form-group">
+                          <label for="username" class="text-info">Username:</label><br>
+                          <input type="text" [(ngModel)]="loginModel.username" [ngClass]="{'is-invalid':loginForm.submitted && username.invalid}"  name="username" id="username" #username="ngModel" class="form-control"required>
+                          <div *ngIf="loginForm.submitted && username.invalid" class="invalid-feedback">
+                              <div *ngIf="username.errors.required">User name is required</div>
+                          </div>
+                      
+                      </div>
+  
+                      <div class="form-group">
+                          <label for="password" class="text-info">Password:</label><br>
+                          <input type="password"  [(ngModel)]="loginModel.password" #password="ngModel" [ngClass]="{'is-invalid':loginForm.submitted && password.invalid}"  name="password" id="password" class="form-control" required>
+                          <div *ngIf="loginForm.submitted && password.invalid" class="invalid-feedback">
+                              <div *ngIf="password.errors.required">Password is required</div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                          <button type="submit" class="btn btn-info btn-md">Submit</button>
+                          <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+                        
+    
+                      </div>
+                
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+ 
